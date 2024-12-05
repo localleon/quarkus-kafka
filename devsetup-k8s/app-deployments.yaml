@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producer1-deployment
+  labels:
+    app: producer1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: producer1
+  template:
+    metadata:
+      labels:
+        app: producer1
+    spec:
+      containers:
+      - name: producer1-jvm
+        image: quarkus/producer1-jvm:latest
+        ports:
+        - containerPort: 8080

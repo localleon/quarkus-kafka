@@ -8,3 +8,5 @@ kind load docker-image quarkus/producer1-jvm:latest
 
 # Deploy to Kubernetes 
 export KUBECONFIG=/tmp/kindkubeconfig
+kubectl apply -f devsetup-k8s/app-deployments.yaml
+kubectl --namespace kafka rollout status --watch deployment/producer1-deployment

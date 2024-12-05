@@ -10,3 +10,12 @@ spec:
     statefulset:
       # -- Number of Redpanda brokers (Redpanda Data recommends setting this to the number of worker nodes in the cluster)
       replicas: 1
+    external:
+      enabled: true
+      domain: localhost
+      type: NodePort
+    tls:
+      enabled: false
+      certs:
+        default:
+          caEnabled: true

@@ -9,9 +9,9 @@ spec:
   additionalConfig:
     cleanup.policy: "compact"
   kafkaApiSpec:
-    tls:
-      caCertSecretRef:
-        name: "redpanda-default-cert"
-        key: "ca.crt"
+    # tls:
+    #   caCertSecretRef:
+    #     name: "redpanda-default-cert"
+    #     key: "ca.crt"
     brokers:
       - "redpanda-0.redpanda.kafka.svc.cluster.local:9093"
