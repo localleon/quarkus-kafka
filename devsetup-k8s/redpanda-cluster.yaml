@@ -1,0 +1,12 @@
+apiVersion: cluster.redpanda.com/v1alpha2
+kind: Redpanda
+metadata:
+  name: redpanda
+  namespace: kafka
+spec:
+  chartRef:
+    chartVersion: 5.9.15
+  clusterSpec:
+    statefulset:
+      # -- Number of Redpanda brokers (Redpanda Data recommends setting this to the number of worker nodes in the cluster)
+      replicas: 1

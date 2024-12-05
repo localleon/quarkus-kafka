@@ -1,0 +1,16 @@
+apiVersion: cluster.redpanda.com/v1alpha2
+kind: Topic
+metadata:
+  name: producer1
+spec:
+  partitions: 1
+  replicationFactor: 1
+  additionalConfig:
+    cleanup.policy: "compact"
+  kafkaApiSpec:
+    brokers:
+      - "redpanda-0.redpanda.kafka.svc.cluster.local:9093"
+    tls:
+      caCertSecretRef:
+        name: "redpanda-default-cert"
+        key: "ca.crt"
