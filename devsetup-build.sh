@@ -7,3 +7,4 @@ kind load docker-image quarkus/producer1-jvm:latest
 # Build Consumer1 package with maven 
 
 # Deploy to Kubernetes 
+export KUBECONFIG=/tmp/kindkubeconfig

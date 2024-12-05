@@ -21,13 +21,15 @@ helm upgrade --install redpanda-controller redpanda/operator \
   --create-namespace \
   --values devsetup-k8s/redpanda-operator-values.yaml
 
-kubectl --namespace kafka rollout status --watch deployment/redpanda-controller-operator
+kubectl --namespace kafka rollout status --watch deployment/redpanda-controller-operator 
 
 # Create RedPanda Kafka 
 kubectl apply -f devsetup-k8s/redpanda-cluster.yaml --namespace kafka
-kubectl get redpanda --namespace kafka --watch
+kubectl get redpanda --namespace kafka 
+
 # Create Redpanda Topics 
 kubectl apply -f devsetup-k8s/redpanda-cluster.yaml
+kubectl get topics.cluster.redpanda.com
 
 # Check final status 
 kubectl get pod --namespace kafka 
