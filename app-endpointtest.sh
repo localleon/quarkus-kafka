@@ -1,1 +1,0 @@
-curl -X POST http://localhost:8080/produce/send -H "Content-Type: application/json" -d '{"productId": 123456, "quantity": 100}'

@@ -12,8 +12,21 @@ spec:
       replicas: 1
     external:
       enabled: true
-      domain: localhost
+      # domain: localhost
       type: NodePort
+      addresses:
+      - localhost
+    listeners:
+      kafka:
+        external:
+          default:
+            enabled: true
+            port: 9094
+            # -- If undefined, `listeners.kafka.external.default.port` is used.
+            advertisedPorts:
+            - 31092 # this corresponds to the exposed nodeport
+            tls:
+              enabled: false
     tls:
       enabled: false
       certs:

@@ -28,7 +28,7 @@ kubectl --namespace kafka rollout status --watch deployment/redpanda-controller-
 
 # Create RedPanda Kafka 
 kubectl apply -f devsetup-k8s/redpanda-cluster.yaml --namespace kafka
-kubectl apply -f devsetup-k8s/redpanda-static-nodeport.yaml --namespace kafka
+# kubectl apply -f devsetup-k8s/redpanda-static-nodeport.yaml --namespace kafka
 kubectl get redpanda --namespace kafka 
 
 # Define the container name and namespace

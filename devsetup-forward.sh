@@ -6,6 +6,7 @@ declare -A SERVICES
 SERVICES=(
   ["redpanda-console"]="9090:8080"    # Format: "local_port:service_port"
 #   ["redpanda"]="9093:9093" # kafka cannot directly be forwarded via port-forward, we need to use nodeport
+  ["producer1-service"]="9091:8080"
 )
 
 NAMESPACE=kafka
